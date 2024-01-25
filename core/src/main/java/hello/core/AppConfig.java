@@ -12,6 +12,9 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/*
+ * 팩토리 메서드를 통해 등록하는 방법
+ */
 @Configuration
 public class AppConfig {
     // 객체의 생성과 연결 담당
