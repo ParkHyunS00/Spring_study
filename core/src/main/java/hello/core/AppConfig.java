@@ -24,16 +24,19 @@ public class AppConfig {
     public MemberService memberService() {
         // MemoryMemberRepository 객체 생성하고 참조값을 생성자로 전달
         // 클라이언트인 MemberServiceImpl 입장에서 보면 의존관계를 외부에서 주입해주는 것 같아 DI라고 함
+        System.out.println("Call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository()); // 생성자 주입
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("Call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("Call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
