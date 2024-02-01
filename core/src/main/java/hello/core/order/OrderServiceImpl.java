@@ -18,6 +18,7 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy; // 구현체에 의존하지 않도록 함(DIP는 지킴) But NullPointException
 
+    // 생성자가 1개만 있다면 @Autowired 생략해도 됨
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;

@@ -19,8 +19,8 @@ import org.springframework.context.annotation.FilterType;
 ) // 기존에 만들었던 Configuration 어노테이션 붙은 설정 제외 -> @Configuration 또한 자동으로 등록됨
 public class AutoAppConfig {
 
-    @Bean(name = "memoryMemberRepository") // 수동 등록 빈 vs 자동 등록 빈 충돌 시 수동 빈 등록이 우선권 가짐
-    MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
+//    @Bean(name = "memoryMemberRepository") // 수동 등록 빈 vs 자동 등록 빈 충돌 시 수동 빈 등록이 우선권 가짐
+//    MemberRepository memberRepository() {
+//        return new MemoryMemberRepository();
+//    }
 }
