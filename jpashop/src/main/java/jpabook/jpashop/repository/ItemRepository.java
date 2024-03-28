@@ -17,7 +17,8 @@ public class ItemRepository {
         if (item.getId() == null) { // 완전히 새로 생성한 객체
             em.persist(item);
         } else {
-            em.merge(item); // update 비슷?
+            em.merge(item); // update 비슷? , 변경된 거 갈아치워버림, 가급적 merge를 쓰지 말고 변경 감지를 사용할 것
+            // merge 는 모든 필드를 교체하기 때문 ==> 엔티티를 변경할 때는 항상 변경 감지를 사용할 것
         }
     }
 
