@@ -84,5 +84,16 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+
+        // fetch join 사용 -> Proxy 객체가 아닌 실제 객체 값을 다 채워서 한 번에 조회
+    }
+
+
     //Querydsl 로 처리
 }
